@@ -1,0 +1,44 @@
+.editorUI {
+  border-radius: 5px;
+  width: 400px;
+  height: 700px;
+  background-color: grey;
+  position: absolute;
+  z-index: 1000;
+}
+
+.menu-explanation {
+  color: white;
+  margin: 5px;
+  height: auto;
+}
+
+.test {
+  background-color: #b3d9ff;
+  border-radius: 7px;
+  width: 500px;
+}
+
+.testTop {
+  border-radius: 7px, 7px, 0px, 0px;
+  padding: 10px;
+  word-wrap: break-word;
+  min-height: 50px;
+  height:auto;
+  background-color: #66c2ff;
+  font-family: hack, monospace;
+  font-size: 1.3em;
+  text-align: justify;
+}
+
+.testBot {
+  border-radius: 7px, 7px, 0px, 0px;
+  padding: 0px;
+  word-wrap: break-word;
+  height: 0px;
+  background-color: #b3d9ff;
+  font-family: hack, monospace;
+  font-size: 1.3em;
+  color: white;
+  text-align: justify;
+}

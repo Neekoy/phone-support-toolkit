@@ -1,0 +1,55 @@
+.body {
+  background-color: #e6f2ff;
+}
+
+#box {
+  background-color:black;
+}
+
+#taylorswift {
+  height:25px;
+}
+
+.topmenu {
+  background-color: black;
+}
+
+#header {
+}
+
+.form-control {
+  width: 50em;
+  font-family: Hack, monospace;
+}
+
+.stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.stylish-input-group .form-control{
+	border-right:0;
+	box-shadow:0 0 0;
+	border-color:#ccc;
+}
+.stylish-input-group button{
+  border:0;
+  background:transparent;
+}
+
+.lookupinfo {
+   font-family: Hack, monospace;
+   font-size: 2em;
+}
+
+.lookuprow {
+  padding-left: 9px;
+  background-color: #b3d9ff;
+  border: 1px solid black;
+  width: 40%;
+  margin: 0 auto;
+  text-align:left;
+}
+
+.lookupnarrow {
+  float: left;
+  width: 8em;
+}
