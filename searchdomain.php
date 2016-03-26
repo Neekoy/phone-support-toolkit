@@ -23,9 +23,9 @@ if (($_POST['domainname']) != "") {
 </head>
 <body class="body">
 <script type="text/javascript" src="box_constructor.js"></script>
+<script type="text/javascript" src="leftmenu.js"></script>
 
 <div class="topmenu">
-<div id="taylorswift"></div>
 <div class="container">
 	<div class="row">
         <form method="post" action="">
@@ -44,10 +44,16 @@ if (($_POST['domainname']) != "") {
         </form>
 	</div>
 </div>
-<div id="taylorswift"></div>
+</div>
+
+<div class="logo">
+<img style='margin-top: 2px; margin-left: 2px;' src="images/logosmall.png" height="80">
 </div>
 
 <div id="header"></div>
+
+<div class="leftmenu">
+</div>
 
 <?php
 echo "<div class='lookupinfo'>";

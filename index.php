@@ -3,8 +3,12 @@
 <html>
 <head>
 
+<link href='https://fonts.googleapis.com/css?family=Syncopate:400,700' rel='stylesheet' type='text/css'>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.019/css/hack-extended.min.css">
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -14,12 +18,12 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body class="body">
 <script type="text/javascript" src="box_constructor.js"></script>
+<script type="text/javascript" src="leftmenu.js"></script>
 
 
 <div class="topmenu">
-<div id="taylorswift"></div>
 <div class="container">
 	<div class="row">
         <form method="post" action="searchdomain.php">
@@ -38,8 +42,19 @@
         </form>
 	</div>
 </div>
-<div id="taylorswift"></div>
 </div>
+
+<div class="logo">
+<img style='margin-top: 2px; margin-left: 2px;' src="images/logosmall.png" height="80">
+<div class='textwrapper'>
+<div class='logofont'>PARAGON</div>
+<div class='logosmallfont col-sm-4 col-sm-offset-4'>toolkitty</div>
+</div>
+</div>
+
+<div class="leftmenu">
+</div>
+
 
 <div id="header"></div>
 

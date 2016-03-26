@@ -2,6 +2,35 @@
   background-color: #e6f2ff;
 }
 
+.logo {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+
+}
+
+.textwrapper {
+  margin-left: 10px;
+  position: relative;
+  float: right;
+}
+
+.logofont {
+  margin-top: 7px;
+  font-family: 'Syncopate', sans-serif;
+  font-size: 2.5em;
+  height: 40px;
+  color: white;
+}
+
+.logosmallfont {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1.3em;
+  color: white;
+}
+
 #box {
   background-color:black;
 }
@@ -11,7 +40,16 @@
 }
 
 .topmenu {
-  background-color: black;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background: linear-gradient(to right, #085078 , #85D8CE);
+}
+
+.leftmenu {
+  width: 50px;
+  height: 100%;
+  float: left;
+  background: linear-gradient(135deg, rgba(8,80,120,1) 0%,rgba(26,99,132,1) 21%,rgba(133,216,206,1) 100%);
 }
 
 #header {
@@ -42,7 +80,7 @@
 
 .lookuprow {
   padding-left: 9px;
-  background-color: #b3d9ff;
+  background-color: #0671c9;
   border: 1px solid black;
   width: 40%;
   margin: 0 auto;
