@@ -31,6 +31,31 @@
   color: white;
 }
 
+.glyphicon.glyphicon-cog {
+  font-size: 19px;
+  color: white;
+}
+
+.glyph {
+  margin-top: 6px;
+}
+
+.username {
+  font-family: 'Syncopate', sans-serif;
+  color: white;
+  float: left;
+  font-size: 25px;
+  padding-right: 10px;
+}
+
+.loggedin {
+  width: 200px;
+  height: 70px;
+  position: absolute;
+  right: 0px;
+  top: 25px;
+}
+
 #box {
   background-color:black;
 }
@@ -47,10 +72,56 @@
 
 .leftmenu {
   width: 50px;
-  height: 100%;
+  height: 89%;
   float: left;
   background: linear-gradient(135deg, rgba(8,80,120,1) 0%,rgba(26,99,132,1) 21%,rgba(133,216,206,1) 100%);
 }
+
+.leftmenu-vertical {
+  transform: rotate(-90deg);
+  position: relative;
+  top: 48%;
+  font-family: 'Syncopate', sans-serif;
+  color: white;
+}
+
+.leftmenu-item {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-left: 1px solid rgba(0, 0, 0, 0.5);
+  color: white;
+  display: none;
+  height: 50px;
+  padding-top: 12px;
+  float: left;
+  cursor: default;
+}
+
+.leftmenu-attribute {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  width: 50px;
+  position: relative;
+  float: left;
+  padding-left: 14px;
+  padding-top: 14px;
+  color: rgba(206, 218, 222, 0.5);
+}
+
+div#first.leftmenu-attribute {
+  margin-top: 50px;
+}
+
+div#first.leftmenu-item {
+  margin-top: 50px;
+}
+
+div#inner.leftmenu-item {
+  margin-top: 25px;
+}
+
+
 
 #header {
 }
@@ -80,7 +151,6 @@
 
 .lookuprow {
   padding-left: 9px;
-  background-color: #0671c9;
   border: 1px solid black;
   width: 40%;
   margin: 0 auto;
@@ -90,4 +160,9 @@
 .lookupnarrow {
   float: left;
   width: 8em;
+}
+
+
+.dnsinfo {
+  display: none;
 }
