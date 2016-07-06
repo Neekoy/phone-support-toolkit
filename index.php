@@ -1,3 +1,4 @@
+<!-- Test commits from C9 -->
 <?php
 
 session_start();
