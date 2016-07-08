@@ -1,24 +1,23 @@
-
-
+<div ng-controller='mainController as main'>
 <div class="topmenu">
-<div class="container">
-	<div class="row">
-        <form method="post" action="">
-        <div class="col-sm-4 col-sm-offset-4">
-            <div id="imaginary_container">
-                <div class="input-group stylish-input-group">
-                    <input name="domainname" type="text" class="form-control"  placeholder="Domain name...">
-                    <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
-            </div>
-        </div>
-        </form>
-	</div>
-</div>
+  <div class="container">
+  	<div class="row">
+          <form>
+          <div class="col-sm-4 col-sm-offset-4">
+              <div id="imaginary_container">
+                  <div class="input-group stylish-input-group">
+                      <input ng-click='main.clearDomain()' ng-model='main.domainName' placeholder="Domain..." name="domainname" type="text" class="form-control">
+                      <span class="input-group-addon">
+                          <button ng-click='main.submitDomain()' type="submit">
+                              <span class="glyphicon glyphicon-search"></span>
+                          </button>
+                      </span>
+                  </div>
+              </div>
+          </div>
+          </form>
+  	</div>
+  </div>
 </div>
 
 <div class="logo">
@@ -30,37 +29,23 @@
 </div>
 
 <div class="loggedin">
-<div class="username"><?php echo $_SESSION['username']; ?></div>
-<div class="glyph"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></div>
+  <div class="username"><?php echo $_SESSION['username']; ?></div>
+  <div class="glyph"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></div>
 </div>
 
 <div class="leftmenu">
 <div class="leftmenu-item leftmenu-item-text col-sm-8 col-sm-offset-1" id="first">Helper</div>
 <div class="leftmenu-item leftmenu-attribute" id="first"><span class="glyphicon glyphicon-remove" aria-hidden="true"></div>
-<div class="leftmenu-item leftmenu-item-text col-sm-8 col-sm-offset-1 dnscheck" id="inner">DNS Check</div>
+<div ng-click="main.funcSwitch('dnscheck')" class="leftmenu-item leftmenu-item-text col-sm-8 col-sm-offset-1 dnscheck" id="inner">DNS Check</div>
 <div class="leftmenu-item leftmenu-attribute" id="inner"><span class="glyphicon glyphicon-remove" aria-hidden="true"></div>
 <div class="leftmenu-item leftmenu-item-text col-sm-8 col-sm-offset-1" id="inner">Blacklists</div>
 <div class="leftmenu-item leftmenu-attribute" id="inner"><span class="glyphicon glyphicon-remove" aria-hidden="true"></div>
 <div class="leftmenu-vertical">TOOLS</div>
 </div>
 
-
 <div id="header"></div>
 
 <div class="dnsinfo">
-  <div class='lookupinfo'>
-    <div class='lookuprow'>
-      <div class='lookupnarrow'>
-        Domain name:
-      </div>
-        <?php echo $_SESSION['domainname']; ?>
-    </div>
-    <div class='lookuprow'>
-      <div class='lookupnarrow'>
-        A record:
-      </div>
-      <?php echo $_SESSION['domainip']; ?>
-    </div>
-  </div>
+  
 </div>
-
+</div>

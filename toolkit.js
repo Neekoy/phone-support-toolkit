@@ -16,6 +16,7 @@ var Schema = mongoose.Schema;
 var async = require("async");
 var request = require("request");
 var moment = require("moment");
+var exec = require('child_process').exec;
 
 mongoose.connect('mongodb://localhost/toolkit');
 global.db = mongoose.connection;
@@ -104,9 +105,52 @@ app.use('/', routes);
 app.use('/users', users);
 
 // Set Port
-app.set('port', (3013));
+app.set('port', (3015));
 
 // Start the Server
 serv.listen(app.get('port'), function(){
   console.log('Server started on port '+app.get('port'));
 });
+
+io.sockets.on('connection', function(socket) {
+
+    username = socket.request.session.username;
+    sessionid = socket.request.sessionID;
+    
+    socket.on('initialise', function(domain) {
+      
+    });
+    
+    socket.on('disconnect', function() {
+    delete ACTIVE_USERS[socket.id];
+    });
+
+});
+
+
+      var cmd = 'dig ANY codelogs.net';
+      exec(cmd, function (error, stdout, stderr) {
+        
+        formatter = /(?:.*QUESTION SECTION)(.*\n|\r)+(?:.*AUTHORITY SECTION)/;
+        formatted = formatter.exec(stdout);
+        stdout = formatted[0];
+        
+        var results = {};
+        var find = "";
+        regexp = /(?:\s)(?:NS|A|TXT)\s+(.*)/;
+        regexpReplace = /(?:\s)(NS|A|TXT)\s+.*/;
+        
+        regexpSort = /\t/; 
+        
+        results['A'] = [];
+        results['TXT'] = [];
+        results['NS'] = [];
+        
+        while (find = regexp.exec(stdout)) {
+          split = find[0].split(regexpSort);
+          results[split[1]].push(split[2]);
+          stdout = stdout.replace(regexpReplace, '');
+        } 
+        console.log(results);
+        
+      });

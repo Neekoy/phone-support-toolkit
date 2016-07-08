@@ -7,5 +7,18 @@ var app = angular.module('toolsApp', [], function($interpolateProvider) {
 });
 
 app.controller('mainController', function($scope, $http) {
-
+    this.dnscheck = false;
+    this.domainName = "Domain...";
+    this.funcSwitch = function(appModule) {
+        
+    }
+    
+    this.submitDomain = function() {
+        socket.emit('initialise', this.domainName);
+        console.log(this.domainName);
+    }
+    
+    this.clearDomain = function () {
+        this.domainName = "";
+    }
 });
