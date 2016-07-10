@@ -18,6 +18,10 @@ app.controller('mainController', function($scope, $http) {
         console.log(this.domainName);
     }
     
+    socket.on('initResp', function(data) {
+        console.log(data);
+    });
+    
     this.clearDomain = function () {
         this.domainName = "";
     }

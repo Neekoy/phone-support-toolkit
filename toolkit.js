@@ -105,7 +105,7 @@ app.use('/', routes);
 app.use('/users', users);
 
 // Set Port
-app.set('port', (3015));
+app.set('port', (3013));
 
 // Start the Server
 serv.listen(app.get('port'), function(){
@@ -119,16 +119,9 @@ io.sockets.on('connection', function(socket) {
     
     socket.on('initialise', function(domain) {
       
-    });
-    
-    socket.on('disconnect', function() {
-    delete ACTIVE_USERS[socket.id];
-    });
-
-});
-
-
-      var cmd = 'dig ANY codelogs.net';
+      console.log(domain);
+      // DNS upon initialisation
+      var cmd = 'dig ANY ' + domain;
       exec(cmd, function (error, stdout, stderr) {
         
         formatter = /(?:.*QUESTION SECTION)(.*\n|\r)+(?:.*AUTHORITY SECTION)/;
@@ -153,4 +146,16 @@ io.sockets.on('connection', function(socket) {
         } 
         console.log(results);
         
+        socket.emit("initResp", results);
+        
       });
+    });
+    
+    // MX blacklists upon initialisation
+    
+    socket.on('disconnect', function() {
+    delete ACTIVE_USERS[socket.id];
+    });
+
+});
+
