@@ -1,13 +1,15 @@
-<div ng-controller='adminController as admin' class='container'>
+<div ng-controller='adminController as admin' class='container all'>
     <div class='header'>
-        Admin area
+        <div class='logo'>Admin area</div>
     </div>
-   <div class='containerHeader'>
-       <button ng-click='admin.changePage("createArticle")' class='btn btn-active'>Create new article</button>
-       <button ng-click='admin.changePage("listArticles")' class='btn btn-active'>All articles</button>
-       <button ng-click='admin.changePage("listAwaiting")' class='btn btn-active'>Waiting approval</button>
-   </div> 
-   <div class='containerContent'>
+    <div class='containerHeader'>
+       <div class="btn-group">
+           <button ng-click='admin.changePage("createArticle")' class='btn btn-primary'>Create new article</button>
+           <button ng-click='admin.changePage("listArticles")' class='btn btn-primary'>All articles</button>
+           <button ng-click='admin.changePage("listAwaiting")' class='btn btn-primary'>Waiting approval</button>
+       </div>
+    </div> 
+    <div class='containerContent'>
         <!-- CREATE ARTICLE -->
         <div ng-show='admin.checkCurrentPage("createArticle")'  class='createArticle'>
            <label for="artName">Article Name:</label>
@@ -30,5 +32,5 @@
         <div ng-show='admin.checkCurrentPage("listAwaiting")'>
             Awaiting approval
         </div>
-   </div>
+    </div>
 </div>
