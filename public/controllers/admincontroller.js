@@ -6,6 +6,21 @@ var app = angular.module('adminApp', ['textAngular'], function($interpolateProvi
     $interpolateProvider.endSymbol(']]');
 });
 
+            app.config(function($provide) {
+                // this demonstrates how to register a new tool and add it to the default toolbar
+                $provide.decorator('taOptions', ['taRegisterTool', '$delegate', function(taRegisterTool, taOptions) { // $delegate is the taOptions we are decorating
+                taOptions.toolbar = [
+                      ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+                      ['bold', 'italics', 'underline', 'strikeThrough', 'ul', 'ol', 'redo', 'undo', 'clear'],
+                      ['justifyLeft', 'justifyCenter', 'justifyRight', 'indent', 'outdent'],
+                      ['html', 'insertImage','insertLink', 'insertVideo'],
+                ];
+                    return taOptions;
+                }]);
+                
+                
+            })
+
 app.controller('adminController', function($scope, $http) {
     this.htmlVariable = "lala";
     this.creatingArt = false;
