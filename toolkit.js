@@ -157,10 +157,12 @@ io.sockets.on('connection', function(socket) {
         socket.emit("initResp", results);
         
       });
+      
+      // MX blacklists upon initialisation
+    
     });
     
-    // MX blacklists upon initialisation
-    
+    // ADMIN AREA FUNCTIONALITY
     socket.on('saveArticle', function(data) {
       if ( data.id === "new" ) {
         data.id = uuid.v4();
@@ -171,6 +173,7 @@ io.sockets.on('connection', function(socket) {
         name: data.name,
         keywords: data.keywords,
         approved: data.approved,
+        author: username,
         content: data.content
       });
       
@@ -179,6 +182,13 @@ io.sockets.on('connection', function(socket) {
         console.log("Data has been saved");
       })
     });
+    
+    socket.on("getAllArticles", function() {
+      articleModel.find({}, function(err, data) {
+        if (err) throw err;
+        socket.emit("pushAllArticles", data);
+      })
+    }); 
     
     socket.on('disconnect', function() {
     delete ACTIVE_USERS[socket.id];

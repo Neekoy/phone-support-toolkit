@@ -3,24 +3,32 @@
         Admin area
     </div>
    <div class='containerHeader'>
-       <button ng-click='admin.createNewArticle()' class='btn btn-active'>Create new article</button>
-       <button class='btn btn-active'>All articles</button>
-       <button class='btn btn-active'>Waiting approval</button>
+       <button ng-click='admin.changePage("createArticle")' class='btn btn-active'>Create new article</button>
+       <button ng-click='admin.changePage("listArticles")' class='btn btn-active'>All articles</button>
+       <button ng-click='admin.changePage("listAwaiting")' class='btn btn-active'>Waiting approval</button>
    </div> 
    <div class='containerContent'>
-        <div ng-show='admin.creatingArt'  class='createArticle'>
+        <!-- CREATE ARTICLE -->
+        <div ng-show='admin.checkCurrentPage("createArticle")'  class='createArticle'>
            <label for="artName">Article Name:</label>
            <input ng-model="admin.articleName" type="text" class="form-control" id="artName" ng-required="true">
            <label for="artKwords">Keywords:</label>
            <input ng-model="admin.articleKeywords" type="text" class="form-control" id="artKwords" ng-required="true">
 
             <div>
-                <label>Data</label>
+                <label>Content:</label>
                 <text-angular ng-model="admin.articleContent" class="ta-editor" name="textBox" ng-model="admin.articleContent" required></text-angular>
             </div>
             <div>
                 <button ng-click="admin.saveArticle()" class='btn btn-active'>Save article</button>
             </div>
+        </div>
+        <!-- LIST ARTICLES -->
+        <div ng-show='admin.checkCurrentPage("listArticles")'>
+            List articles
+        </div>
+        <div ng-show='admin.checkCurrentPage("listAwaiting")'>
+            Awaiting approval
         </div>
    </div>
 </div>

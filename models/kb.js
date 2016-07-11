@@ -6,6 +6,7 @@ var articleSchema = new Schema({
   name: String,
   keywords: [],
   approved: Boolean,
+  author: String,
   content: String
 });
 
