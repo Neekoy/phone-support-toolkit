@@ -48,15 +48,13 @@ $("div.leftmenu-item-text").mouseleave(function () {
 
 
 
-$(".dnscheck").click(function () {
-
-  if (showdnsinfo == false) {
-    showdnsinfo = true;
+$(".leftmenu-item-text").click(function () {
+  
+  if ( $(this).next().find('.glyphicon').hasClass('glyphicon-remove') ) {
     $(this).next().find('.glyphicon').removeClass('glyphicon-remove').addClass('glyphicon-ok');
   }
 
   else {
-    showdnsinfo = false;
     $(this).next().find('.glyphicon').removeClass('glyphicon-ok').addClass('glyphicon-remove');
   }
 

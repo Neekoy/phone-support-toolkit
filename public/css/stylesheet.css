@@ -1,148 +1,100 @@
 .body {
-
   background-color: #e6f2ff;
-
 }
 
-
-
 .logo {
-
   z-index: 1;
   position: absolute;
   top: 0;
   left: 0;
   height: 80px;
-
-
-
 }
 
-
-
 .textwrapper {
-
   margin-left: 10px;
   position: relative;
   float: right;
-
 }
 
-
-
 .logofont {
-
   margin-top: 7px;
   font-family: 'Syncopate', sans-serif;
   font-size: 2.5em;
   height: 40px;
   color: white;
-
 }
 
-
-
 .logosmallfont {
-
   font-family: 'Syncopate', sans-serif;
   font-size: 1.3em;
   color: white;
-
 }
-
-
 
 .glyphicon.glyphicon-cog {
   font-size: 19px;
   color: white;
-
 }
-
-
 
 .glyph {
-
   margin-top: 6px;
-
 }
 
-
-
 .username {
-
   font-family: 'Syncopate', sans-serif;
   color: white;
   float: left;
   font-size: 25px;
   padding-right: 10px;
-
 }
 
-
-
 .loggedin {
-
   width: 200px;
   height: 70px;
   position: absolute;
   right: 0px;
   top: 25px;
-
 }
 
-
-
 #box {
-
   background-color:black;
-
 }
 
 
 
 #taylorswift {
-
   height:25px;
-
 }
 
 
 
 .topmenu {
-
   padding-top: 25px;
   padding-bottom: 25px;
   background: linear-gradient(to right, #085078 , #85D8CE);
-
 }
 
 
 
 .leftmenu {
-
   width: 50px;
   height: 89%;
   float: left;
   background: linear-gradient(135deg, rgba(8,80,120,1) 0%,rgba(26,99,132,1) 21%,rgba(133,216,206,1) 100%);
-
 }
 
 
 
 .leftmenu-vertical {
-
   transform: rotate(-90deg);
   position: relative;
   top: 48%;
   font-family: 'Syncopate', sans-serif;
   color: white;
-
 }
 
 
 
 .leftmenu-item {
-
   font-family: 'Syncopate', sans-serif;
   font-size: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.5);
@@ -154,13 +106,14 @@
   padding-top: 12px;
   float: left;
   cursor: default;
-
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
 }
 
 
 
 .leftmenu-attribute {
-
   border: 1px solid rgba(0, 0, 0, 0.5);
   width: 50px;
   position: relative;
@@ -168,31 +121,24 @@
   padding-left: 14px;
   padding-top: 14px;
   color: rgba(206, 218, 222, 0.5);
-
 }
 
 
 
 div#first.leftmenu-attribute {
-
   margin-top: 50px;
-
 }
 
 
 
 div#first.leftmenu-item {
-
   margin-top: 50px;
-
 }
 
 
 
 div#inner.leftmenu-item {
-
   margin-top: 25px;
-
 }
 
 
@@ -208,32 +154,81 @@ div#inner.leftmenu-item {
 
 
 .form-control {
-
   width: 50em;
   font-family: Hack, monospace;
-
 }
 
 
 
 .stylish-input-group .input-group-addon{
-
     background: white !important;
-
 }
 
 .stylish-input-group .form-control{
-
 	border-right:0;
 	box-shadow:0 0 0;
 	border-color:#ccc;
-
 }
 
 .stylish-input-group button{
-
   border:0;
   background:transparent;
-
 }
 
+
+
+
+.toolHead {
+  height: 40px;
+  background: #F1F2B5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #9DCCC7 , #7CB2DE); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #83C0C9 , #3C7EA3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+}
+
+.toolHeadText {
+  font-family: Syncopate;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+  font-size: 1.2em;
+}
+
+.helperSearch {
+  width: 100%;
+  height: 40px;
+}
+
+.helperSearchInput {
+  width: 100%;
+  height: 40px;
+  font-size: 1.1em;
+  font-family: Hack, monospace;
+}
+
+.articleHead {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid black;
+  background: #F1F2B5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #9DCCC7 , #7CB2DE); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #83C0C9 , #3C7EA3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.articleHead:hover {
+  background: linear-gradient(to left, #B1DDE3 , #65A4C7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.articleHeadText {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+  color: white;
+  font-family: Hack;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  cursor: default;
+}

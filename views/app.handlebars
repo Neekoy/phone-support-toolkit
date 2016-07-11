@@ -34,9 +34,9 @@
 </div>
 
 <div class="leftmenu">
-<div class="leftmenu-item leftmenu-item-text col-sm-8 col-sm-offset-1" id="first">Helper</div>
+<div ng-click="main.funcSwitch('helperActive')" class="leftmenu-item leftmenu-item-text col-sm-8 col-sm-offset-1" id="first">Helper</div>
 <div class="leftmenu-item leftmenu-attribute" id="first"><span class="glyphicon glyphicon-remove" aria-hidden="true"></div>
-<div ng-click="main.funcSwitch('dnscheck')" class="leftmenu-item leftmenu-item-text col-sm-8 col-sm-offset-1 dnscheck" id="inner">DNS Check</div>
+<div ng-click="main.funcSwitch('dnsActive')" class="leftmenu-item leftmenu-item-text col-sm-8 col-sm-offset-1 dnscheck" id="inner">DNS Check</div>
 <div class="leftmenu-item leftmenu-attribute" id="inner"><span class="glyphicon glyphicon-remove" aria-hidden="true"></div>
 <div class="leftmenu-item leftmenu-item-text col-sm-8 col-sm-offset-1" id="inner">Blacklists</div>
 <div class="leftmenu-item leftmenu-attribute" id="inner"><span class="glyphicon glyphicon-remove" aria-hidden="true"></div>
@@ -45,7 +45,26 @@
 
 <div id="header"></div>
 
-<div class="dnsinfo">
+<div id="taylorswift"></div>
+
+<div ng-show="main.helperActive" class="helper container">
+  <div class="toolHead">
+    <div class="toolHeadText">Helper</div>
+  </div>
+  <div class="helperSearch">
+    <input placeholder="Your search query here..." class="helperSearchInput" type="text" ng-model="helperSearch"/>
+  </div>
+  <div class="articleHead" ng-repeat="article in main.allArticles | filter :{keywords:helperSearch} | limitTo: 5">
+    <div class="articleHeadText"> [[ article.name ]] </div>    
+  </div>
+  <div class="articleContent">
+    <div class="articleContentText"></div>
+  </div>
+</div>
+
+<div ng-show="main.dnsActive" class="dnsinfo">
   
 </div>
+
+
 </div>
