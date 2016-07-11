@@ -1,4 +1,5 @@
 console.log("Greetings from the main controller.");
+
 var socket = io();
 
 var app = angular.module('toolsApp', [], function($interpolateProvider) {

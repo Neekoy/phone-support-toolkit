@@ -18,11 +18,17 @@ var request = require("request");
 var moment = require("moment");
 var exec = require('child_process').exec;
 
+// Initialise the database connection
 mongoose.connect('mongodb://localhost/toolkit');
 global.db = mongoose.connection;
 
+// Initialise the app routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+// Adds the KB article database schema
+var articles = require('./models/kb.js');
+articleModel = db.model("Articles");
 
 // Init App
 var app = express();
@@ -111,6 +117,8 @@ app.set('port', (3013));
 serv.listen(app.get('port'), function(){
   console.log('Server started on port '+app.get('port'));
 });
+
+ACTIVE_USERS = {};
 
 io.sockets.on('connection', function(socket) {
 
