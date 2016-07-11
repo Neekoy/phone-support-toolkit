@@ -8,15 +8,19 @@
        <button class='btn btn-active'>Waiting approval</button>
    </div> 
    <div class='containerContent'>
-       <div ng-show='admin.creatingArt'  class='createArticle'>
-           Creating article
+        <div ng-show='admin.creatingArt'  class='createArticle'>
            <label for="artName">Article Name:</label>
-           <input type="text" class="form-control" id="artName">
+           <input ng-model="admin.articleName" type="text" class="form-control" id="artName" ng-required="true">
            <label for="artKwords">Keywords:</label>
-           <input type="text" class="form-control" id="artKwords">
-       </div>
-   </div>
-      <label>Data</label>
-      <text-angular class="ta-editor" name="textBox" ng-model="data" required></text-angular>
+           <input ng-model="admin.articleKeywords" type="text" class="form-control" id="artKwords" ng-required="true">
 
+            <div>
+                <label>Data</label>
+                <text-angular ng-model="admin.articleContent" class="ta-editor" name="textBox" ng-model="admin.articleContent" required></text-angular>
+            </div>
+            <div>
+                <button ng-click="admin.saveArticle()" class='btn btn-active'>Save article</button>
+            </div>
+        </div>
+   </div>
 </div>

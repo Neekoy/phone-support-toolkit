@@ -1,4 +1,8 @@
 .ng-scope[type=button] {
     height: 35px;
-    width: 40px;
+    width: 45px;
+}
+
+.createArticle {
+    margin-top: 40px;
 }

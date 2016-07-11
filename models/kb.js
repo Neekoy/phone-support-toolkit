@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var articleSchema = new Schema({
+  id: String,
   name: String,
-  approved: Boolean,
   keywords: [],
-  content: [],
-  uid: String
+  approved: Boolean,
+  content: String
 });
 
 module.exports = mongoose.model("Articles", articleSchema);

@@ -24,8 +24,26 @@ var app = angular.module('adminApp', ['textAngular'], function($interpolateProvi
 app.controller('adminController', function($scope, $http) {
     this.htmlVariable = "lala";
     this.creatingArt = false;
+    
     this.createNewArticle = function (data) {
         this.creatingArt = true;
+    };
+    
+    this.articleContent = "";
+    this.articleName = "";
+    this.articleKeywords = [];
+    this.saveArticle = function () {
+        console.log("Save button has been clicked.");
+        keywordArray = this.articleKeywords.split(" ");
+        
+        saveArticleData = {
+            id: "new",
+            name: this.articleName,
+            keywords: keywordArray,
+            content: this.articleContent
+        }
+        
+        socket.emit("saveArticle", saveArticleData);
     };
     
 });

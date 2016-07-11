@@ -161,6 +161,25 @@ io.sockets.on('connection', function(socket) {
     
     // MX blacklists upon initialisation
     
+    socket.on('saveArticle', function(data) {
+      if ( data.id === "new" ) {
+        data.id = uuid.v4();
+        data.approved = false;
+      }
+      var articleToSave = new articleModel ({
+        id: data.id,
+        name: data.name,
+        keywords: data.keywords,
+        approved: data.approved,
+        content: data.content
+      });
+      
+      articleToSave.save(function (err) {
+        if (err) throw err;
+        console.log("Data has been saved");
+      })
+    });
+    
     socket.on('disconnect', function() {
     delete ACTIVE_USERS[socket.id];
     });
