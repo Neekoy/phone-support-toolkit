@@ -14,11 +14,7 @@ app.controller('mainController', function($scope, $http) {
     this.domainName = "Domain...";
     this.funcSwitch = function(data) {
         if ( data === 'helperActive') {
-            if ( this.helperActive ) {
-                this.helperActive = false;
-            } else {
-                this.helperActive = true;
-            }
+            this.helperActive = !this.helperActive;
         }
     }
     

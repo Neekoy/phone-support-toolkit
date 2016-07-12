@@ -132,6 +132,9 @@ io.sockets.on('connection', function(socket) {
       var cmd = 'dig ANY ' + domain;
       exec(cmd, function (error, stdout, stderr) {
         
+        // Look away if you value your sanity. The node DNS module doesn't have 
+        // dig ANY functionality, so I have to subprocess the dig command
+        // and parse the output with regex >.>
         formatter = /(?:.*QUESTION SECTION)(.*\n|\r)+(?:.*AUTHORITY SECTION)/;
         formatted = formatter.exec(stdout);
         stdout = formatted[0];
