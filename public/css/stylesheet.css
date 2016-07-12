@@ -193,6 +193,19 @@ div#inner.leftmenu-item {
   transform: translateY(-50%);
   margin-left: 10px;
   font-size: 1.2em;
+  width: 95%;
+  float: left;
+}
+
+.toolHeadCog {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  float: left; 
+}
+
+.helper {
+  margin-top: 25px;
 }
 
 .helperSearch {
@@ -205,6 +218,7 @@ div#inner.leftmenu-item {
   height: 40px;
   font-size: 1.1em;
   font-family: Hack, monospace;
+  padding-left: 10px;
 }
 
 .articleHead {

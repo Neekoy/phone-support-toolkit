@@ -9,14 +9,24 @@ var app = angular.module('toolsApp', [], function($interpolateProvider) {
 
 app.controller('mainController', function($scope, $http) {
     this.helperActive = false;
+    this.expandHelperActive = false;
     this.dnsActive = false;
+    this.blacklistsActive = false;
     
     this.domainName = "Domain...";
     this.funcSwitch = function(data) {
         if ( data === 'helperActive') {
             this.helperActive = !this.helperActive;
+        } else if ( data === 'dnsActive') {
+            this.dnsActive = !this.dnsActive;
+        } else if ( data === 'blacklistsActive') {
+            this.blacklistsActive = !this.blacklistsActive;
         }
     }
+    
+    this.expandHelper = function() {
+        this.expandHelperActive = !this.expandHelperActive;
+    } 
     
     socket.emit('getAllArticles', "getArticles"); 
     socket.on('pushAllArticles', function (data) {

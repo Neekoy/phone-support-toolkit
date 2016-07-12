@@ -38,33 +38,44 @@
 <div class="leftmenu-item leftmenu-attribute" id="first"><span class="glyphicon glyphicon-remove" aria-hidden="true"></div>
 <div ng-click="main.funcSwitch('dnsActive')" class="leftmenu-item leftmenu-item-text col-sm-8 col-sm-offset-1 dnscheck" id="inner">DNS Check</div>
 <div class="leftmenu-item leftmenu-attribute" id="inner"><span class="glyphicon glyphicon-remove" aria-hidden="true"></div>
-<div class="leftmenu-item leftmenu-item-text col-sm-8 col-sm-offset-1" id="inner">Blacklists</div>
+<div ng-click="main.funcSwitch('blacklistsActive')" class="leftmenu-item leftmenu-item-text col-sm-8 col-sm-offset-1" id="inner">Blacklists</div>
 <div class="leftmenu-item leftmenu-attribute" id="inner"><span class="glyphicon glyphicon-remove" aria-hidden="true"></div>
 <div class="leftmenu-vertical">TOOLS</div>
 </div>
 
 <div id="header"></div>
 
-<div id="taylorswift"></div>
-
-<div ng-show="main.helperActive" class="helper container">
-  <div class="toolHead">
-    <div class="toolHeadText">Helper</div>
+<div class='container'>
+  <div ng-show="main.helperActive" class="helper">
+    <div class="toolHead">
+      <div class="toolHeadText">Helper</div>
+      <div ng-click="main.expandHelper()" class="toolHeadCog"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></div>
+    </div>
+    <div ng-show="main.expandHelperActive" class="helperSearch">
+      
+    </div>
+    <div class="helperSearch">
+      <input placeholder="Your search query here..." class="helperSearchInput" type="text" ng-model="helperSearch"/>
+    </div>
+    <div class="articleHead" ng-repeat="article in main.allArticles | filter :{keywords:helperSearch} | limitTo: 5">
+      <div class="articleHeadText"> [[ article.name ]] </div>    
+    </div>
+    <div class="articleContent">
+      <div class="articleContentText"></div>
+    </div>
   </div>
-  <div class="helperSearch">
-    <input placeholder="Your search query here..." class="helperSearchInput" type="text" ng-model="helperSearch"/>
-  </div>
-  <div class="articleHead" ng-repeat="article in main.allArticles | filter :{keywords:helperSearch} | limitTo: 5">
-    <div class="articleHeadText"> [[ article.name ]] </div>    
-  </div>
-  <div class="articleContent">
-    <div class="articleContentText"></div>
-  </div>
-</div>
-
-<div ng-show="main.dnsActive" class="dnsinfo">
   
+  <div ng-show="main.dnsActive" class="helper">
+    <div class="toolHead">
+      <div class="toolHeadText">DNSInfo</div>
+    </div>
+  </div>
+  
+  <div ng-show="main.blacklistsActive" class="helper">
+    <div class="toolHead">
+      <div class="toolHeadText">Email Blacklists</div>
+    </div>
+  </div>
 </div>
-
 
 </div>
