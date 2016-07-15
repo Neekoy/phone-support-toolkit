@@ -57,11 +57,11 @@
     <div class="helperSearch">
       <input placeholder="Your search query here..." class="helperSearchInput" type="text" ng-model="helperSearch"/>
     </div>
-    <div class="articleHead" ng-repeat="article in main.allArticles | filter :{keywords:helperSearch} | limitTo: 5">
-      <div class="articleHeadText"> [[ article.name ]] </div>    
-    </div>
-    <div class="articleContent">
-      <div class="articleContentText"></div>
+    <div ng-repeat="article in main.allArticles | filter :{keywords:helperSearch} | limitTo: 5">
+      <div class="articleHead" ng-click="main.articleHeadClicked(article.name)" >
+        <div class="articleHeadText"> [[ article.name ]] </div>    
+      </div>
+      <div ng-bind-html="article.content | sanitize" ng-if="article.clicked"></div>
     </div>
   </div>
   

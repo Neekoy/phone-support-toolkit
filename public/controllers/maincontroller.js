@@ -7,6 +7,12 @@ var app = angular.module('toolsApp', [], function($interpolateProvider) {
     $interpolateProvider.endSymbol(']]');
 });
 
+app.filter("sanitize", ['$sce', function($sce) {
+  return function(htmlCode){
+    return $sce.trustAsHtml(htmlCode);
+  }
+}]);
+
 app.controller('mainController', function($scope, $http) {
     this.helperActive = false;
     this.expandHelperActive = false;
@@ -34,6 +40,17 @@ app.controller('mainController', function($scope, $http) {
        console.log(this.allArticles);
        $scope.$apply();
     }.bind(this));
+    
+    this.articleHeadClicked = function (data) {
+        for ( var i in this.allArticles ) {
+            if ( this.allArticles[i].name === data ) {
+                this.allArticles[i].clicked = true;
+                console.log(this.allArticles[i].content);
+            } else {
+                this.allArticles[i].clicked = false;
+            }
+        }
+    }
     
     this.submitDomain = function() {
         socket.emit('initialise', this.domainName);
