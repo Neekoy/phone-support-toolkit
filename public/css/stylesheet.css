@@ -246,3 +246,8 @@ div#inner.leftmenu-item {
   -webkit-user-select: none;
   cursor: default;
 }
+
+.articleContent {
+  padding: 15px;
+  background-color: #90C3D4;
+}

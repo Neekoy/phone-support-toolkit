@@ -61,7 +61,7 @@
       <div class="articleHead" ng-click="main.articleHeadClicked(article.name)" >
         <div class="articleHeadText"> [[ article.name ]] </div>    
       </div>
-      <div ng-bind-html="article.content | sanitize" ng-if="article.clicked"></div>
+      <div class="articleContent" ng-bind-html="article.content | sanitize" ng-if="article.clicked"></div>
     </div>
   </div>
   
